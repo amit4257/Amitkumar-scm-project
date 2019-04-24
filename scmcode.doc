@@ -1,4 +1,4 @@
-#include<iostream.h>
+duedkkkkkude<iostream.h>
 #include<conio.h>
 #include<fstream>
 
@@ -179,9 +179,9 @@ break;
 
 }
 
-if(flag==0)
+  (flag==0)
 cout<<"\n Sorry Room no. not found or vacant....!!";
-cout<<"\n\n Press any key to continue....!!";
+cout<<"\n\  Press any key to continue....!!";
 
 getch();
 fin.close();
@@ -467,5 +467,6 @@ getch();
 h.main_menu();
 return 0;
 }
+hi this is hotel manahgemnet yo rocks
 
 
