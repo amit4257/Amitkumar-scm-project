@@ -1074,6 +1074,416 @@ void main()
 					clrscr();
 					mainscreen();
 					print();
+	char q;
+	p.sn=l;
+	displaydepartment();
+	gotoxy(5,14);textcolor(10);
+	cprintf("Record of patient no:");
+	printf(" %d",l);
+	gotoxy(5,17);
+	cprintf("Name:");
+
+	gotoxy(5,20);
+	cprintf("Address:");
+
+	gotoxy(5,23);
+	cprintf("Age: ");
+
+	gotoxy(5,26);
+	cprintf("Sex(m/f): ");
+
+	gotoxy(5,29);
+	cprintf("Disease Descrp:");
+	gotoxy(9,30);
+	cprintf("(In Short)");
+
+	gotoxy(5,33);
+	cprintf("Reff. Specialist no:");
+	fflush(stdin);gotoxy(10,17);
+	scanf("%[^\n]",p.name);
+	p.name[0]=toupper(p.name[0]);
+	gotoxy(14,20);
+	fflush(stdin);
+	scanf("%[^\n]",p.address);
+	gotoxy(10,23);
+	fflush(stdin);
+	scanf("%d",&p.age);
+	gotoxy(15,26);
+	fflush(stdin);
+	scanf("%c",&p.ch);
+	fflush(stdin);gotoxy(22,29);
+	scanf("%[^\n]",p.disease);
+}
+void newrecord1()
+{
+	  char q;
+	 fflush(stdin);
+	 gotoxy(25,33);
+	scanf("%c",&q);
+	switch(q)
+	{
+		case '1':
+			{      	gotoxy(5,36);
+			       cprintf("Reff.Specialist:");
+			       printf("Generalphysician");
+			       strcpy(p.department,"General Physician");
+			       gotoxy(5,39);
+				cprintf("Room no:");
+				fflush(stdin);
+				scanf("%d",&p.roomno);
+			       //	getch();
+
+				break;
+
+			}
+		case '2':
+			{      gotoxy(5,36);
+			       cprintf("Reff.Specialist:");
+			       printf("E.N.T.");
+			       gotoxy(5,39);
+			       cprintf("Room no:");
+			       printf("302");
+			       strcpy(p.department,"E.N.T");
+				p.roomno=302; getch();
+				break;
+			}
+			case '3':
+			{      gotoxy(5,36);
+			       cprintf("Reff.Specialist:");
+			       printf("Cardiologist");
+			       gotoxy(5,39);
+			       cprintf("Room no:");
+			       printf("509");
+			       strcpy(p.department,"cardiologist");
+				p.roomno=509; getch();
+				break;
+			}
+			case '4':
+			{      gotoxy(5,36);
+			       cprintf("Reff.Specialist:");
+			       printf("Dermatologist");
+			       gotoxy(5,39);
+			       cprintf("Room no:");
+			       printf("406");
+			       strcpy(p.department,"Dermatologist");
+				p.roomno=406; getch();
+				break;
+			}
+
+			case '5':
+			{      gotoxy(5,36);
+			       cprintf("Reff.Specialist:");
+			       printf("Gastroenteroiogist");
+			       gotoxy(5,39);
+			       cprintf("Room no:");
+			       printf("308");
+			       strcpy(p.department,"Gastroentrologist");
+				p.roomno=308; getch();
+				break;
+			}
+			case '6':
+			{      gotoxy(5,36);
+			       cprintf("Reff.Specialist:");
+			       printf("Pediatrician");
+			       gotoxy(5,39);
+			       cprintf("Room no:");
+			       printf("207");
+			       strcpy(p.department,"Padiatrician");
+				p.roomno=207; getch();
+				break;
+			}
+			case '7':
+			{      gotoxy(5,36);
+			       cprintf("Reff.Specialist:");
+			       printf("EYE Specialist");
+			       gotoxy(5,39);
+			       cprintf("Room no:");
+			       printf("102");
+			       strcpy(p.department,"EYE Specialist");
+				p.roomno=102; getch();
+				break;
+			}
+			case '8':
+			{      gotoxy(5,36);
+			       cprintf("Reff.Specialist:");
+			       printf("Nephrologist");
+			       gotoxy(5,39);
+			       cprintf("Room no:");
+			       printf("109");
+			       strcpy(p.department,"Nephrologist");
+				p.roomno=109; getch();
+				break;
+			}
+			case '9':
+			{      gotoxy(5,36);
+			       cprintf("Reff.Specialist:");
+			       printf("General Surgeon");
+			       strcpy(p.department,"General Surgeon");
+			       gotoxy(5,39);
+				cprintf("Room no:");
+				fflush(stdin);
+				scanf("%d",&p.roomno);
+			       //	getch();
+				break;
+			}
+			case '10':
+			{      gotoxy(5,36);
+			       cprintf("Reff.Specialist:");
+			       printf("Accumpunturist");
+			       strcpy(p.department,"Accumpunturist");
+			       gotoxy(5,39);
+				cprintf("Room no:");
+				fflush(stdin);
+				scanf("%d",&p.roomno);
+
+				//  getch();
+				break;
+			}
+		default:
+			{
+			gotoxy(5,36);
+			cprintf("Reff.Specialist:");
+			fflush(stdin);
+			scanf("%[^\n]",p.department);
+			gotoxy(5,39);
+			cprintf("Room no:");
+			fflush(stdin);
+			scanf("%d",&p.roomno);
+
+			return;
+			}
+	}
+}
+
+void displaydepartment()
+{
+	int i;
+	gotoxy(48,14);textcolor(6);
+	cprintf(":Specialists:");
+	gotoxy(47,15);textcolor(15);
+	cprintf("---------------");
+	gotoxy(70,14);textcolor(6);
+	cprintf("Room No.");
+	gotoxy(67,15);textcolor(15);
+	cprintf("----------");
+	gotoxy(48,17);textcolor(5);
+	cprintf("1.General Physician");
+	gotoxy(70,17);textcolor(7);
+	cprintf("201,202");
+	gotoxy(48,19);textcolor(5);
+	cprintf("2.E.N.T");
+	gotoxy(70,19);textcolor(7);
+	cprintf("302");
+	gotoxy(48,21);textcolor(5);
+	cprintf("3.Cardiologist");
+	gotoxy(70,21);textcolor(7);
+	cprintf("509");
+	gotoxy(48,23);textcolor(5);
+	cprintf("4.Dermatologist");
+	gotoxy(70,23);textcolor(7);
+	cprintf("406");
+	gotoxy(48,25);textcolor(5);
+	cprintf("5.Gastroenterologist");
+	gotoxy(70,25);textcolor(7);
+	cprintf("308");
+	gotoxy(48,27);textcolor(5);
+	cprintf("6.Pediatrician");
+	gotoxy(70,27);textcolor(7);
+	cprintf("207");
+	gotoxy(48,29);textcolor(5);
+	cprintf("7.EYE Specialist");
+	gotoxy(70,29);textcolor(7);
+	cprintf("102");
+	gotoxy(48,31);textcolor(5);
+	cprintf("8.Nephrologist");
+	gotoxy(70,31);textcolor(7);
+	cprintf("109");
+	gotoxy(48,33);textcolor(5);
+	cprintf("9.General Surgeon");
+	gotoxy(70,33);textcolor(7);
+	cprintf("407,408");
+	gotoxy(70,35);textcolor(7);
+	cprintf("412,413");
+	gotoxy(48,37);textcolor(5);
+	cprintf("10.Accupuncturist");
+	gotoxy(70,37);textcolor(7);
+	cprintf("123,119");
+	textcolor(15);
+	for(i=14;i<=45;i++)
+	{
+		gotoxy(46,i);
+		cprintf("|");
+	}
+}
+void print()
+{
+	gotoxy(29,10);  textcolor(7);
+	cprintf("DISPLAYING RECORDS");
+	gotoxy(28,11);textcolor(15);
+	cprintf("--------------------");
+	gotoxy(10,14);textcolor(2);
+	cprintf("Patient no:");gotoxy(21,14);textcolor(11);
+	cprintf("%d",p.sn);gotoxy(10,17);textcolor(2);
+	cprintf("Name:");gotoxy(15,17);textcolor(11);
+	cprintf(" %s",p.name);gotoxy(10,20);textcolor(2);
+	cprintf("Address:");gotoxy(18,20);textcolor(11);
+	cprintf(" %s",p.address);gotoxy(10,23);textcolor(2);
+	cprintf("Age:");gotoxy(15,23);textcolor(11);
+	cprintf("%d",p.age);gotoxy(10,26);textcolor(2);
+	cprintf("Sex:");gotoxy(14,26);textcolor(11);
+	cprintf(" %c",p.ch);gotoxy(10,29);textcolor(2);
+	cprintf("Date of Reg.:");gotoxy(24,29);textcolor(11);
+	cprintf("%s",p.date);gotoxy(10,32);textcolor(2);
+	cprintf("Room no:");gotoxy(18,32);textcolor(11);
+	cprintf(" %d",p.roomno);gotoxy(10,35);textcolor(2);
+	cprintf("Department:");gotoxy(21,35);textcolor(11);
+	cprintf(" %s",p.department);gotoxy(10,38);textcolor(2);
+	cprintf("Category:");gotoxy(19,38);textcolor(11);
+	cprintf(" %s",p.category);
+
+}
+void edit1()
+{
+	int i,k;
+	gotoxy(10,41);textcolor(2);
+	cprintf("Details:");gotoxy(18,41);textcolor(11);
+	cprintf(" %s",p.recommendation);gotoxy(10,45);textcolor(4);
+	cprintf("Press");textcolor(15+128);
+	cprintf(" `Enter'");textcolor(4);
+	cprintf(" for financial records");
+	getch();
+	clrscr();
+	mainscreen();
+	textcolor(14);     gotoxy(20,8);
+	cprintf("The list of expenditure of patient no:");
+	printf("%d",p.sn);
+	for(z=0,i=0,k=11;p.testfee[z]!=NULL;i++,z++)
+	{
+		textcolor(15);gotoxy(20,k);
+		cprintf("%d)",i+1);      textcolor(11);
+		cprintf(" %s",&p.test[z][0]);textcolor(15);gotoxy(40,k);
+		cprintf("Rs.%0.2f",p.testfee[z]);
+		k=k+2;
+	}
+	gotoxy(20,k+2); textcolor(11);
+	cprintf("Total charge=");textcolor(15);
+	cprintf("Rs.%0.2f",p.totalfee);
+	gotoxy(20,k+4);textcolor(11);
+	cprintf("Total Deposited:");textcolor(15);
+	cprintf("Rs.%0.2f",p.balance);
+	if(p.totalfee>p.balance)
+	{
+		textcolor(11); gotoxy(20,k+6);
+		cprintf("Total money to pay=");
+		textcolor(15);
+		cprintf("%0.2f",p.totalfee-p.balance);
+	}
+	else
+	{
+		textcolor(11); gotoxy(20,k+6);
+		cprintf("Total money to return=");
+		textcolor(15);
+		cprintf("%0.2f",p.balance-p.totalfee);
+	}
+}
+void switch1()
+{
+	int x,i;
+	float d,lk;
+	char v;
+	label2:
+	gotoxy(30,15);textcolor(11);
+	cprintf("Enter");gotoxy(30,18);
+	cprintf("1.Add Details");
+	gotoxy(30,20);
+	cprintf("2.Change Specialist");
+	gotoxy(30,22);
+	cprintf("3.Deposit balance");gotoxy(30,24);
+	cprintf("4.Add test");
+	gotoxy(30,26);
+	cprintf("5.Return to main menu");
+	gotoxy(35,39);
+	fflush(stdin);
+	scanf("%d",&x);
+	switch(x)
+	{
+		case 1:
+		      {
+			clrscr();
+			mainscreen();
+			gotoxy(31,10);  textcolor(7);
+			cprintf("ADDING DETAILS");
+			gotoxy(30,11);textcolor(15);
+			cprintf("----------------");
+			gotoxy(15,25);
+			textcolor(2);
+			cprintf("Previous Details:");
+			gotoxy(32,25);textcolor(11);
+			cprintf(" %s ",p.recommendation);
+			gotoxy(15,28);textcolor(2);
+			strcat(p.recommendation,"-> ");
+			printf("New Details:");
+			fflush(stdin);
+			scanf("%[^\n]",string);
+			strcat(p.recommendation,string);
+			break;
+		      }
+		case 2:
+		      {
+			clrscr();
+			mainscreen();
+			displaydepartment();
+			gotoxy(28,10);  textcolor(7);
+			cprintf("CHANGING SPECIALIST");
+			gotoxy(27,11);textcolor(15);
+			cprintf("---------------------");
+			gotoxy(5,20);
+			textcolor(2);
+			cprintf("Previous Specialist:");
+			gotoxy(26,20);textcolor(11);
+			cprintf(" %s ",p.department);
+			textcolor(15);gotoxy(5,27);
+			cprintf(":Enter the new changed Specialist;");
+			gotoxy(5,33);     textcolor(2);
+			cprintf("Reff. Specialist no:");
+			newrecord1();
+			break;
+		      }
+		case 3:
+		      {
+		       clrscr();
+		       mainscreen();
+		       gotoxy(28,10);  textcolor(7);
+		       cprintf("DEPOSITING MONEY");
+		       gotoxy(27,11);textcolor(15);
+		       cprintf("---------------------");
+		       gotoxy(20,20);
+		       textcolor(2);
+		       cprintf("Deposited balance: Rs.");
+		       fflush(stdin);
+		       scanf("%f",&d);
+		       p.balance=p.balance+d;
+		       break;
+		      }
+		case 4:
+		      {
+		       clrscr();
+		       mainscreen();
+		       displaytest();
+		       gotoxy(45,13);textcolor(3);
+		       cprintf("Type `esc' tn content to stop");
+		       gotoxy(45,15);textcolor(15);
+		       cprintf("Contents");gotoxy(70,15);
+			cprintf("Rs.");lk=0;
+		       for(i=17;1;i++,z++)
+		       {
+				gotoxy(45,i);
+				fflush(stdin);
+				cprintf("%c ",16);
+				scanf("%s",&p.test[z][0]);
+				if(strcmp(&p.test[z][0],"esc")==0)
+				{       labelh:
+					gotoxy(48,i+3);textcolor(15);
 					gotoxy(17,10);  textcolor(7);
 					cprintf("::DISPLAYING-RECORDS-OF-EMERGENCY-PATIENTS::");
 					gotoxy(16,11);textcolor(15);
